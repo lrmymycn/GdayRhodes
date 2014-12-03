@@ -1,0 +1,14 @@
+{
+  "name": "supersized",
+  "homepage": "https://github.com/buildinternet/supersized",
+  "_release": "d6ed282ecf",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d6ed282ecf93c513c2595304fc38a3e9899b4e15"
+  },
+  "_source": "git://github.com/buildinternet/supersized.git",
+  "_target": "*",
+  "_originalSource": "supersized",
+  "_direct": true
+}
