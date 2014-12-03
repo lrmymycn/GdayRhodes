@@ -6,7 +6,7 @@
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Compiles .less files into .css files" />
       <option name="exitCodeBehavior" value="ERROR" />
-      <option name="fileExtension" value="txt" />
+      <option name="fileExtension" value="less" />
       <option name="immediateSync" value="true" />
       <option name="name" value="LESS" />
       <option name="output" value="../css/$FileNameWithoutExtension$.css" />
@@ -23,7 +23,7 @@
       <option name="passParentEnvs" value="true" />
       <option name="program" value="/usr/local/bin/lessc" />
       <option name="scopeName" value="Project Files" />
-      <option name="trackOnlyRoot" value="false" />
+      <option name="trackOnlyRoot" value="true" />
       <option name="workingDir" value="$FileDir$" />
       <envs />
     </TaskOptions>
