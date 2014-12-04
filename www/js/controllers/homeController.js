@@ -1,6 +1,6 @@
 'use strict';
 
-gdayModule.controller('homeController', ['$scope', function($scope) {
+gdayModule.controller('homeController', ['$scope', 'trainResource', function($scope, trainResource) {
 
     $('#home').append('<div id="supersized-loader"></div><ul id="supersized"></ul>');
 
@@ -40,5 +40,12 @@ gdayModule.controller('homeController', ['$scope', function($scope) {
         ]
 
     });
-    
+
+    trainResource.getNextTrainByDirection(0).success(function(response){
+        if(response.errorCode > 0){
+            //TODO handle error
+        }else{
+            $scope.trains = response.result;
+        }
+    });
 }]);
