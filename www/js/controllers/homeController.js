@@ -48,4 +48,5 @@ gdayModule.controller('homeController', ['$scope', 'trainResource', function($sc
             $scope.trains = response.result;
         }
     });
+
 }]);
