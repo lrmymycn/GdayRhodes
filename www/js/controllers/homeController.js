@@ -5,23 +5,24 @@ gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource',
 	$('.bar-header').addClass('bar-transparent');
 
     $scope.isLoading = false;
-    $scope.direction = $rootScope.user == null ? 1 : $rootScope.user.direction;
+
+    $scope.toCity = $rootScope.user == null ? 1 : $rootScope.user.toCity;
 
     $scope.switchDirection = function(){
         if($scope.isLoading){
             return;
         }
 
-        $scope.direction = 1 - $scope.direction;
+        $scope.toCity = 1 - $scope.toCity;
 
-        userService.saveTrainDirection($rootScope.user, $scope.direction);
+        userService.saveTrainDirection($rootScope.user, $scope.toCity);
 
         loadHome();
     }
 
     function loadHome(){
         $scope.isLoading = true;
-        homeResource.getHome($scope.direction).success(function(response){
+        homeResource.getHome($scope.toCity).success(function(response){
             $scope.isLoading = false;
             if(response.errorCode > 0){
                 //TODO handle error

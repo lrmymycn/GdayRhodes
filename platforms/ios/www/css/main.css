@@ -12,6 +12,23 @@
   font-weight: normal;
   font-style: normal;
 }
+@-webkit-keyframes rotating {
+  /* Safari and Chrome */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* supersized */
 #supersized-loader {
   position: absolute;
@@ -103,6 +120,17 @@
 .menu .menu a {
   color: #999999;
 }
+#loading-icon {
+  position: absolute;
+  top: 50px;
+  right: 16px;
+  color: #fff;
+  font-size: 25px;
+  z-index: 100;
+  display: none;
+  -webkit-animation: rotating .6s linear infinite;
+  animation: rotating .6s linear infinite;
+}
 /* curtains */
 #curtains {
   position: fixed;
@@ -129,9 +157,8 @@
   /* Chrome10+,Safari5.1+ */
 }
 #hours-wrapper {
-  margin: 0;
   position: relative;
-  margin: 100px 0 0 20px;
+  margin: 100px 0 0 16px;
   padding: 0;
   z-index: 1;
 }
@@ -230,15 +257,16 @@
 }
 #home .panel-button {
   position: absolute;
-  top: 0px;
+  top: -2px;
   left: 110px;
   background: none;
   cursor: pointer;
 }
 #home .panel-button a {
   position: relative;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
+  padding: 5px 10px;
   color: #fff;
 }
 #home .panel-button a:hover {

@@ -1,26 +1,34 @@
 'use strict';
 
-gdayModule.controller('homeController', ['$scope', 'homeResource', function($scope, homeResource) {
+gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource', 'userService', function($scope, $rootScope, homeResource, userService) {
 
 	$('.bar-header').addClass('bar-transparent');
 
+    $scope.isLoading = false;
 
-    $scope.direction = 1;
+    $scope.toCity = $rootScope.user == null ? 1 : $rootScope.user.toCity;
 
     $scope.switchDirection = function(){
-        $scope.direction = 1 - $scope.direction;
+        if($scope.isLoading){
+            return;
+        }
+
+        $scope.toCity = 1 - $scope.toCity;
+
+        userService.saveTrainDirection($rootScope.user, $scope.toCity);
 
         loadHome();
     }
 
     function loadHome(){
-        homeResource.getHome($scope.direction).success(function(response){
-
+        $scope.isLoading = true;
+        homeResource.getHome($scope.toCity).success(function(response){
+            $scope.isLoading = false;
             if(response.errorCode > 0){
                 //TODO handle error
             }else{
                 $scope.trains = response.result;
-                //var temp = ($scope.trains.nextTrain.arriveTime).split(":");
+
                 $scope.hh = ($scope.trains.nextTrain.arriveTime).split(":")[0];
                 $scope.mm = ($scope.trains.nextTrain.arriveTime).split(":")[1];
                 var now = moment();
@@ -50,6 +58,11 @@ gdayModule.controller('homeController', ['$scope', 'homeResource', function($sco
 
             }
         });
+    }
+
+    $scope.doRefresh = function() {
+        loadHome();
+        $scope.$broadcast('scroll.refreshComplete');
     }
 
     loadHome();

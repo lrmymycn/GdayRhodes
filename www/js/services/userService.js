@@ -5,14 +5,14 @@ gdayModule.factory('userService', ['localStorageService', function (localStorage
     var LOGGED_IN_USER = "LOGGED_IN_USER";
 
     var userObj = {
-        direction: 1
+        toCity: 1
     };
 
     return {
         getUser: function () {
             var json = localStorageService.get(LOGGED_IN_USER);
 
-            console.log(json);
+            console.log('get user: ' + json);
 
             return json;
         },
@@ -23,14 +23,14 @@ gdayModule.factory('userService', ['localStorageService', function (localStorage
             localStorageService.set(LOGGED_IN_USER, jsonStr);
         },
 
-        saveTrainDirection: function(user, direction){
+        saveTrainDirection: function(user, toCity){
             if(user == null){
                 user = userObj;
             }
 
-            user.direction = direction;
+            user.toCity = toCity;
 
-            console.log(user);
+            console.log('save user: ' + user);
 
             this.saveUser(user);
         }
