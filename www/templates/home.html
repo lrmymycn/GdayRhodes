@@ -21,7 +21,7 @@
                     <div id="intro-author">NEXT TRAIN FROM</div>
                     <!-- author end -->
                     <!-- title -->
-                    <div id="intro-title">RHODES<span class="to">TO</span><span>{{trains.destination}}</span></div>
+                    <div id="intro-title">RHODES<span class="to">TO</span><span>{{trains.nextTrain.destination}}</span></div>
                     <!-- title end -->
 
                     <div id="intro-author">WILL DEPART IN</div>
@@ -30,14 +30,14 @@
                     <div id="countdown-wrapper">
                         <div id="countdown-wrap">
                             <ul id="countdown">
-                                <li><span class="hours">00</span>
+                                <li><span class="hours">{{arriveInHours}}</span>
                                     <p class="timeRefHours">hours</p>
                                 </li>
-                                <li><span class="minutes">12</span>
+                                <li><span class="minutes">{{arriveInMins}}</span>
                                     <p class="timeRefMinutes">mins</p>
                                 </li>
                                 <li><span>at</span></li>
-                                <li><span>{{trains.arriveTime}}</span></span>
+                                <li><span>{{trains.nextTrain.arriveTime}}</span></span>
                                 </li>
                                 <li><span class="ampm">AM</span>
                                 </li>
@@ -46,7 +46,7 @@
                     </div>
                     <!-- countdown end -->
 
-                    <div><span class="intro-intro">{{trains.delay}} Mins Delay</span></div>
+                    <div><span class="intro-intro">{{trains.nextTrain.delay}} Mins Delay</span></div>
 
                 </div>
             </div>
