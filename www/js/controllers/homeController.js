@@ -59,5 +59,10 @@ gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource',
         });
     }
 
+    $scope.doRefresh = function() {
+        loadHome();
+        $scope.$broadcast('scroll.refreshComplete');
+    }
+
     loadHome();
 }]);
