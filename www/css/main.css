@@ -87,6 +87,22 @@
 #supersized li.activeslide img {
   display: inline;
 }
+.bar.bar-transparent {
+  background: none;
+  border-color: transparent;
+}
+.bar.bar-transparent .title {
+  color: #fff;
+}
+.bar.bar-transparent .button {
+  color: #fff;
+}
+.menu {
+  background: #232a30;
+}
+.menu .menu a {
+  color: #999999;
+}
 /* curtains */
 #curtains {
   position: fixed;
@@ -114,7 +130,7 @@
 }
 #hours-wrapper {
   margin: 0;
-  position: absolute;
+  position: relative;
   margin: 100px 0 0 20px;
   padding: 0;
   z-index: 1;
@@ -214,21 +230,14 @@
 }
 #home .panel-button {
   position: absolute;
-  width: auto;
-  height: 15px;
-  top: 16px;
-  right: 20px;
+  top: 0px;
+  left: 110px;
   background: none;
   cursor: pointer;
-  z-index: 1000;
 }
 #home .panel-button a {
   position: relative;
-  font-family: 'LeagueGothicRegular';
-  font-size: 15px;
-  font-style: normal;
-  font-weight: normal;
-  text-transform: uppercase;
+  font-size: 20px;
   text-decoration: none;
   color: #fff;
 }

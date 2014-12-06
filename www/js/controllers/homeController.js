@@ -2,7 +2,10 @@
 
 gdayModule.controller('homeController', ['$scope', 'homeResource', function($scope, homeResource) {
 
+	$('.bar-header').addClass('bar-transparent');
+
     homeResource.getNextTrainByDirection(0).success(function(response){
+
         if(response.errorCode > 0){
             //TODO handle error
         }else{
