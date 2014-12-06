@@ -50,19 +50,13 @@ gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource',
                 $scope.arriveInMins = (pad + minutesToGo).slice(-pad.length);
 
                 if($scope.trains.nextTrain.delay) {
-                    var mins = $scope.trains.nextTrain.delay > 1 ? "Mins" : "Min";
-                    $scope.delay = $scope.trains.nextTrain.delay + " " + mins + " Delay";
+                    $scope.delay = $scope.trains.nextTrain.delay + "Mins Delay"
                 } else {
-                    $scope.delay = "Running On Time";
+                    $scope.delay = "Running On Time"
                 }
 
             }
         });
-    }
-
-    $scope.doRefresh = function() {
-        loadHome();
-        $scope.$broadcast('scroll.refreshComplete');
     }
 
     loadHome();
