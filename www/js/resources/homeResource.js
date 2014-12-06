@@ -2,7 +2,7 @@
 
 gdayModule.factory('homeResource', ['$http', 'appSettings', function ($http, appSettings) {
     return {
-        getNextTrainByDirection: function(direction){
+        getHome: function(direction){
             return $http.get(this.getApiPath() + '?toCity=' + direction);
         },
 
