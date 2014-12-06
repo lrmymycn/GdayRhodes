@@ -42,6 +42,7 @@ gdayModule.controller('homeController', ['$scope', 'homeResource', function($sco
     });
 
     homeResource.getNextTrainByDirection(0).success(function(response){
+
         if(response.errorCode > 0){
             //TODO handle error
         }else{
