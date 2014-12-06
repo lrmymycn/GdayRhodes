@@ -4,10 +4,14 @@ gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource',
 
 	$('.bar-header').addClass('bar-transparent');
 
-
+    $scope.isLoading = false;
     $scope.direction = $rootScope.user == null ? 1 : $rootScope.user.direction;
 
     $scope.switchDirection = function(){
+        if($scope.isLoading){
+            return;
+        }
+
         $scope.direction = 1 - $scope.direction;
 
         userService.saveTrainDirection($rootScope.user, $scope.direction);
@@ -16,8 +20,9 @@ gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource',
     }
 
     function loadHome(){
+        $scope.isLoading = true;
         homeResource.getHome($scope.direction).success(function(response){
-
+            $scope.isLoading = false;
             if(response.errorCode > 0){
                 //TODO handle error
             }else{
