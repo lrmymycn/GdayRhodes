@@ -10,9 +10,7 @@ gdayModule.controller('homeController', ['$scope', 'homeResource', function($sco
             //TODO handle error
         }else{
             $scope.trains = response.result;
-            //var a = moment().format("H:mm:ss");
             var now = moment();
-           // var arriveTime = $scope.trains.nextTrain.arriveTime;
             var arriveAt = moment($scope.trains.nextTrain.arriveTime, "HH:mm:ss");
             var diff = arriveAt.diff(now, 'seconds');
             if(diff < 0) {
