@@ -1,26 +1,33 @@
 'use strict';
 
-gdayModule.controller('homeController', ['$scope', 'homeResource', function($scope, homeResource) {
+gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource', 'userService', function($scope, $rootScope, homeResource, userService) {
 
 	$('.bar-header').addClass('bar-transparent');
 
-
-    $scope.direction = 1;
+    $scope.isLoading = false;
+    $scope.direction = $rootScope.user == null ? 1 : $rootScope.user.direction;
 
     $scope.switchDirection = function(){
+        if($scope.isLoading){
+            return;
+        }
+
         $scope.direction = 1 - $scope.direction;
+
+        userService.saveTrainDirection($rootScope.user, $scope.direction);
 
         loadHome();
     }
 
     function loadHome(){
+        $scope.isLoading = true;
         homeResource.getHome($scope.direction).success(function(response){
-
+            $scope.isLoading = false;
             if(response.errorCode > 0){
                 //TODO handle error
             }else{
                 $scope.trains = response.result;
-                //var temp = ($scope.trains.nextTrain.arriveTime).split(":");
+
                 $scope.hh = ($scope.trains.nextTrain.arriveTime).split(":")[0];
                 $scope.mm = ($scope.trains.nextTrain.arriveTime).split(":")[1];
                 var now = moment();

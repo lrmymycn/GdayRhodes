@@ -1,17 +1,25 @@
 <ion-view id="home" title="G'day Rhodes">
+    <!-- curtains -->
+    <div id="curtains"></div>
+    <!-- curtains end -->
+
+    <!-- shade -->
+    <div id="shade"></div>
+    <!-- shade end -->
     <ion-nav-buttons side="left">
         <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
-    <ion-content scroll="false" style="top:0;">
+    <ion-content style="top:0;">
+        <ion-refresher
+                pulling-icon="none"
+                on-refresh="doRefresh()">
+        </ion-refresher>
         <div id="loading-icon" ng-show="isLoading"><i class="icon ion-load-c"></i></div>
 
-        <!-- curtains -->
-        <div id="curtains"></div>
-        <!-- curtains end -->
 
-        <!-- shade -->
-        <div id="shade"></div>
-        <!-- shade end -->
+
+
+
 
         <!-- hours wrapper -->
         <div id="hours-wrapper">
@@ -57,6 +65,7 @@
             <!-- intro end -->
         </div>
         <!-- hours wrapper end -->
+
     </ion-content>
     <div supersized></div>
 </ion-view>

@@ -12,11 +12,9 @@ gdayModule.factory('userService', ['localStorageService', function (localStorage
         getUser: function () {
             var json = localStorageService.get(LOGGED_IN_USER);
 
-            if(json == ''){
-                return null;
-            }else{
-                return JSON.parse(json);
-            }
+            console.log(json);
+
+            return json;
         },
 
         saveUser: function(user){
@@ -31,6 +29,8 @@ gdayModule.factory('userService', ['localStorageService', function (localStorage
             }
 
             user.direction = direction;
+
+            console.log(user);
 
             this.saveUser(user);
         }
