@@ -1,0 +1,246 @@
+@font-face {
+  font-family: 'LeagueGothicRegular';
+  src: url('fonts/leaguegothic-regular/leaguegothic-regular-webfont.eot');
+  src: url('fonts/leaguegothic-regular/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/leaguegothic-regular/leaguegothic-regular-webfont.woff') format('woff'), url('fonts/leaguegothic-regular/leaguegothic-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BigNoodleTitlingOblique';
+  src: url('fonts/bignoodletitling-oblique/bignoodletitling-oblique-webfont.eot');
+  src: url('fonts/bignoodletitling-oblique/bignoodletitling-oblique-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/bignoodletitling-oblique/bignoodletitling-oblique-webfont.woff') format('woff'), url('fonts/bignoodletitling-oblique/bignoodletitling-oblique-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* supersized */
+#supersized-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  text-indent: -999em;
+  background: url(../images/supersized-progress.gif) no-repeat center center;
+  z-index: -1;
+}
+#supersized {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  z-index: -999;
+}
+#supersized img {
+  width: auto;
+  height: auto;
+  position: relative;
+  display: none;
+  outline: none;
+  border: none;
+}
+#supersized.speed img {
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -moz-crisp-edges;
+}
+/* Speed */
+#supersized.quality img {
+  -ms-interpolation-mode: bicubic;
+  image-rendering: optimizeQuality;
+}
+/* Quality */
+#supersized li {
+  display: block;
+  list-style: none;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: -30;
+}
+#supersized a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#supersized li.prevslide {
+  z-index: -20;
+}
+#supersized li.activeslide {
+  z-index: -10;
+}
+#supersized li.image-loading {
+  background: url(../images/supersized-progress.gif) no-repeat center center;
+  width: 100%;
+  height: 100%;
+}
+#supersized li.image-loading img {
+  visibility: hidden;
+}
+#supersized li.prevslide img,
+#supersized li.activeslide img {
+  display: inline;
+}
+.bar.bar-transparent {
+  background: none;
+  border-color: transparent;
+}
+.bar.bar-transparent .title {
+  color: #fff;
+}
+.bar.bar-transparent .button {
+  color: #fff;
+}
+.menu {
+  background: #232a30;
+}
+.menu .menu a {
+  color: #999999;
+}
+/* curtains */
+#curtains {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: url(../img/curtains.png) repeat top left;
+  z-index: 0;
+}
+/* shade */
+#shade {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjY1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+}
+#hours-wrapper {
+  margin: 0;
+  position: relative;
+  margin: 100px 0 0 20px;
+  padding: 0;
+  z-index: 1;
+}
+#hours-wrapper .introduction div {
+  font-family: "BigNoodleTitlingOblique";
+  font-size: 20px;
+  line-height: 1.5;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+#hours-wrapper .introduction div span {
+  display: inline-block;
+}
+#hours-wrapper #intro-author {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+#hours-wrapper #intro-title {
+  font-family: 'LeagueGothicRegular';
+  font-size: 90px;
+  font-weight: 100;
+  font-style: normal;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 90px;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  margin: 5px 0 5px -3px;
+  padding: 0;
+  text-transform: none;
+}
+#hours-wrapper #intro-title span {
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 40px;
+}
+#hours-wrapper #intro-title span.to {
+  margin: 0 10px;
+}
+/* countdown */
+#countdown-wrapper {
+  margin: 0 auto;
+  padding: 0;
+}
+#countdown {
+  margin: 0;
+  padding: 0;
+}
+#countdown li {
+  display: inline-block;
+  text-align: left;
+  margin-right: 10px;
+  vertical-align: top;
+}
+#countdown li span {
+  font-family: "LeagueGothicRegular";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: normal;
+  color: #999;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#countdown li span.minutes {
+  color: #fff;
+}
+#countdown li span.colon {
+  margin: 0 5px;
+}
+#countdown li span::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  position: absolute;
+}
+#countdown li p.timeRefDays,
+#countdown li p.timeRefHours,
+#countdown li p.timeRefMinutes,
+#countdown li p.timeRefSeconds {
+  font-family: 'LeagueGothicRegular';
+  color: #999;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0;
+  padding: 0 0 5px 0;
+}
+#countdown li p.timeRefMinutes {
+  color: #fff;
+}
+#home .panel-button {
+  position: absolute;
+  top: 0px;
+  left: 110px;
+  background: none;
+  cursor: pointer;
+}
+#home .panel-button a {
+  position: relative;
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+#home .panel-button a:hover {
+  color: #fff;
+}

@@ -1,0 +1,60 @@
+<ion-view id="home" title="G'day Rhodes">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" style="top:0;">
+        <!-- curtains -->
+        <div id="curtains"></div>
+        <!-- curtains end -->
+
+        <!-- shade -->
+        <div id="shade"></div>
+        <!-- shade end -->
+
+        <!-- hours wrapper -->
+        <div id="hours-wrapper">
+            <!-- intro -->
+            <div class="intro">
+                <div class="panel-button"><a href ng-click="switchDirection()"><i class="icon ion-arrow-swap"></i></a></div>
+
+                <div class="introduction">
+
+                    <!-- author -->
+                    <div id="intro-author">NEXT TRAIN FROM</div>
+                    <!-- author end -->
+                    <!-- title -->
+                    <div id="intro-title">RHODES<span class="to">TO</span><span>{{trains.nextTrain.destination}}</span></div>
+                    <!-- title end -->
+
+                    <div id="intro-author">WILL DEPART IN</div>
+
+                    <!-- countdown -->
+                    <div id="countdown-wrapper">
+                        <div id="countdown-wrap">
+                            <ul id="countdown">
+                                <li><span class="hours">{{arriveInHours}}</span>
+                                    <p class="timeRefHours">hours</p>
+                                </li>
+                                <li><span class="minutes">{{arriveInMins}}</span>
+                                    <p class="timeRefMinutes">mins</p>
+                                </li>
+                                <li><span>at</span></li>
+                                <li><span>{{hh}}</span><span class="colon">:</span><span>{{mm}}</span>
+                                </li>
+                                <li><span class="ampm">AM</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- countdown end -->
+
+                    <div><span class="intro-intro">{{delay}}</span></div>
+
+                </div>
+            </div>
+            <!-- intro end -->
+        </div>
+        <!-- hours wrapper end -->
+    </ion-content>
+    <div supersized></div>
+</ion-view>
