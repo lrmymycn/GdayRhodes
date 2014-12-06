@@ -4,6 +4,7 @@ gdayModule.controller('homeController', ['$scope', 'homeResource', function($sco
 
 	$('.bar-header').addClass('bar-transparent');
 
+
     $scope.direction = 1;
 
     $scope.switchDirection = function(){
@@ -19,9 +20,11 @@ gdayModule.controller('homeController', ['$scope', 'homeResource', function($sco
                 //TODO handle error
             }else{
                 $scope.trains = response.result;
-                //var a = moment().format("H:mm:ss");
+                //var temp = ($scope.trains.nextTrain.arriveTime).split(":");
+                $scope.hh = ($scope.trains.nextTrain.arriveTime).split(":")[0];
+                $scope.mm = ($scope.trains.nextTrain.arriveTime).split(":")[1];
                 var now = moment();
-                // var arriveTime = $scope.trains.nextTrain.arriveTime;
+
                 var arriveAt = moment($scope.trains.nextTrain.arriveTime, "HH:mm:ss");
                 var diff = arriveAt.diff(now, 'seconds');
                 if(diff < 0) {
@@ -34,8 +37,16 @@ gdayModule.controller('homeController', ['$scope', 'homeResource', function($sco
                     hoursToGo = Math.floor(minutesToGo / 60);
                     minutesToGo = minutesToGo % 60;
                 }
-                $scope.arriveInHours = hoursToGo;
-                $scope.arriveInMins = minutesToGo;
+                var pad = '00';
+
+                $scope.arriveInHours = (pad + hoursToGo).slice(-pad.length);
+                $scope.arriveInMins = (pad + minutesToGo).slice(-pad.length);
+
+                if($scope.trains.nextTrain.delay) {
+                    $scope.delay = $scope.trains.nextTrain.delay + "Mins Delay"
+                } else {
+                    $scope.delay = "Running On Time"
+                }
 
             }
         });
