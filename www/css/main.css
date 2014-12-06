@@ -123,7 +123,7 @@
 #loading-icon {
   position: absolute;
   top: 50px;
-  right: 16px;
+  left: 16px;
   color: #fff;
   font-size: 25px;
   z-index: 100;
@@ -134,10 +134,8 @@
 /* curtains */
 #curtains {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   background: url(../img/curtains.png) repeat top left;
   z-index: 0;
@@ -145,10 +143,8 @@
 /* shade */
 #shade {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   z-index: 0;
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -262,16 +258,15 @@
 }
 #home .panel-button {
   position: absolute;
-  top: -2px;
+  top: 0px;
   left: 110px;
   background: none;
   cursor: pointer;
 }
 #home .panel-button a {
   position: relative;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
-  padding: 5px 10px;
   color: #fff;
 }
 #home .panel-button a:hover {

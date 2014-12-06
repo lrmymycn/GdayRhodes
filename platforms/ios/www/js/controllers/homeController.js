@@ -1,33 +1,26 @@
 'use strict';
 
-gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource', 'userService', function($scope, $rootScope, homeResource, userService) {
+gdayModule.controller('homeController', ['$scope', 'homeResource', function($scope, homeResource) {
 
 	$('.bar-header').addClass('bar-transparent');
 
-    $scope.isLoading = false;
-    $scope.direction = $rootScope.user == null ? 1 : $rootScope.user.direction;
+
+    $scope.direction = 1;
 
     $scope.switchDirection = function(){
-        if($scope.isLoading){
-            return;
-        }
-
         $scope.direction = 1 - $scope.direction;
-
-        userService.saveTrainDirection($rootScope.user, $scope.direction);
 
         loadHome();
     }
 
     function loadHome(){
-        $scope.isLoading = true;
         homeResource.getHome($scope.direction).success(function(response){
-            $scope.isLoading = false;
+
             if(response.errorCode > 0){
                 //TODO handle error
             }else{
                 $scope.trains = response.result;
-
+                //var temp = ($scope.trains.nextTrain.arriveTime).split(":");
                 $scope.hh = ($scope.trains.nextTrain.arriveTime).split(":")[0];
                 $scope.mm = ($scope.trains.nextTrain.arriveTime).split(":")[1];
                 var now = moment();
@@ -50,19 +43,13 @@ gdayModule.controller('homeController', ['$scope', '$rootScope', 'homeResource',
                 $scope.arriveInMins = (pad + minutesToGo).slice(-pad.length);
 
                 if($scope.trains.nextTrain.delay) {
-                    var mins = $scope.trains.nextTrain.delay > 1 ? "Mins" : "Min";
-                    $scope.delay = $scope.trains.nextTrain.delay + " " + mins + " Delay";
+                    $scope.delay = $scope.trains.nextTrain.delay + "Mins Delay"
                 } else {
-                    $scope.delay = "Running On Time";
+                    $scope.delay = "Running On Time"
                 }
 
             }
         });
-    }
-
-    $scope.doRefresh = function() {
-        loadHome();
-        $scope.$broadcast('scroll.refreshComplete');
     }
 
     loadHome();
