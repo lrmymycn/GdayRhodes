@@ -11,7 +11,7 @@ gdayModule.controller('aboutController',
         $scope.pasteFeedback = function(string) {
             var currentValue = document.getElementById("feedback-input").value
             if(currentValue.indexOf(string) < 0){
-                document.getElementById("feedback-input").value = currentValue + string + "\r";
+                document.getElementById("feedback-input").value = string + "\r" + currentValue;
             }
         }
 }]);
