@@ -10,6 +10,7 @@ gdayModule.controller('homeController',
     var countDownInterval;
 
 	$('.bar-header').addClass('bar-transparent');
+        $('.bar-header').removeClass('bar-about');
 
     $scope.isLoading = false;
 
@@ -54,7 +55,7 @@ gdayModule.controller('homeController',
 
                 var arriveAt = moment(arriveTime, "HH:mm:ss");
 
-                $scope.train.arriveHour = arriveAt.format('HH');
+                $scope.train.arriveHour = arriveAt.format('hh');
                 $scope.train.arriveMinute = arriveAt.format('mm');
                 $scope.train.arriveAmPm = arriveAt.format('A');
 

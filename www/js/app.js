@@ -48,7 +48,8 @@ var gdayModule = angular.module('gday', ['ionic','LocalStorageModule'])
       url: "/about-us",
       views: {
         'menuContent' :{
-          templateUrl: "templates/about-us.html"
+          templateUrl: "templates/about-us.html",
+          controller: 'aboutController'
         }
       }
     });

@@ -1,8 +1,20 @@
-<ion-view title="About Us">
+<ion-view title="Feedback">
   <ion-nav-buttons side="left">
-    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    <button menu-toggle="left" class="button go-back icon ion-arrow-left-a"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>About Us</h1>
+    <div class="feedback-wrap">
+      <button class="button pre-defined-feedback button-small button-calm" ng-click='pasteFeedback("arrive time is not accurate")'>
+        #arrive time is not accurate#
+      </button>
+      <button class="button pre-defined-feedback button-small button-calm" ng-click='pasteFeedback("too slow")'>
+        #too slow#
+      </button>
+      <textarea id="feedback-input" class="feedback-input" rows="10" placeholder="Max 200 words"></textarea>
+      <input type="text" placeholder="Mobile or Email （Optional)">
+      <button class="button button-block button-positive">
+        Send
+      </button>
+    </div>
   </ion-content>
 </ion-view>
