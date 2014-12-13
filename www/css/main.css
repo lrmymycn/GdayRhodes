@@ -93,7 +93,7 @@
   z-index: -10;
 }
 #supersized li.image-loading {
-  background: url(../images/supersized-progress.gif) no-repeat center center;
+  background: url(../img/supersized-progress.gif) no-repeat center center;
   width: 100%;
   height: 100%;
 }
@@ -114,12 +114,6 @@
 .bar.bar-transparent .button {
   color: #fff;
 }
-.bar.bar-about {
-  background-color: #444444;
-}
-.bar.bar-about .title {
-  color: #fff;
-}
 .menu {
   background: #232a30;
 }
@@ -132,21 +126,20 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#loading-icon {
+#home-loading-icon {
   position: absolute;
   top: 50px;
   right: 16px;
   color: #fff;
   font-size: 25px;
   z-index: 100;
-  display: none;
-  -webkit-animation: rotating .6s linear infinite;
-  animation: rotating .6s linear infinite;
 }
-.button.go-back {
-  background-color: #444444;
-  color: #ffffff;
-  border: none;
+#global-loading i {
+  font-size: 35px;
+}
+#global-loading span {
+  display: block;
+  padding-top: 5px;
 }
 .button.send {
   background-color: #444444;
@@ -294,17 +287,10 @@
 #home .panel-button a:hover {
   color: #fff;
 }
-.feedback-wrap {
-  padding: 10px;
+#feedback-wrap {
+  padding-top: 10px;
 }
-.feedback-wrap .pre-defined-feedback {
+#feedback-wrap .tag {
   margin-bottom: 10px;
-  border-radius: 3px;
-}
-.feedback-wrap textarea,
-.feedback-wrap input {
-  border: solid 1px;
-  border-color: #E5E5E5;
-  border-radius: 3px;
-  margin-bottom: 10px;
+  margin-right: 5px;
 }

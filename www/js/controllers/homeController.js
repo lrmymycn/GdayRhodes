@@ -12,7 +12,7 @@ gdayModule.controller('homeController',
 	$('.bar-header').addClass('bar-transparent');
         $('.bar-header').removeClass('bar-about');
 
-    $scope.isLoading = false;
+    $scope.homeIsLoading = false;
 
     $scope.train = {
         toCity: $rootScope.user == null ? 1 : $rootScope.user.toCity,
@@ -26,7 +26,7 @@ gdayModule.controller('homeController',
     }
 
     $scope.switchDirection = function(){
-        if($scope.isLoading){
+        if($scope.homeIsLoading){
             return;
         }
 
@@ -38,10 +38,9 @@ gdayModule.controller('homeController',
     }
 
     function loadHome(){
-        $scope.isLoading = true;
+        $scope.homeIsLoading = true;
 
         homeResource.getHome($scope.train.toCity).success(function(response){
-            $scope.isLoading = false;
             if(response.errorCode > 0){
                 //TODO handle error
             }else{
@@ -72,6 +71,8 @@ gdayModule.controller('homeController',
                 calculateTimeToGo(arriveAt);
                 startCountdown(arriveAt);
             }
+
+            $scope.homeIsLoading = false;
         });
     }
 
