@@ -126,16 +126,20 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#loading-icon {
+#home-loading-icon {
   position: absolute;
   top: 50px;
   right: 16px;
   color: #fff;
   font-size: 25px;
   z-index: 100;
-  display: none;
-  -webkit-animation: rotating .6s linear infinite;
-  animation: rotating .6s linear infinite;
+}
+#global-loading i {
+  font-size: 35px;
+}
+#global-loading span {
+  display: block;
+  padding-top: 5px;
 }
 .button.send {
   background-color: #444444;
