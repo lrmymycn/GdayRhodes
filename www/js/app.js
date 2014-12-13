@@ -44,12 +44,12 @@ var gdayModule = angular.module('gday', ['ionic','LocalStorageModule'])
       }
     })
 
-    .state('app.about-us', {
-      url: "/about-us",
+    .state('app.feedback', {
+      url: "/feedback",
       views: {
         'menuContent' :{
-          templateUrl: "templates/about-us.html",
-          controller: 'aboutController'
+          templateUrl: "templates/feedback.html",
+          controller: 'feedbackController'
         }
       }
     });
