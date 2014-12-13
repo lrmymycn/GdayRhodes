@@ -104,21 +104,21 @@
 #supersized li.activeslide img {
   display: inline;
 }
+.bar.bar-stable {
+  background: #232a30;
+}
+.bar.bar-stable .title {
+  color: #fff;
+}
+.bar.bar-stable .button {
+  color: #fff;
+}
 .bar.bar-transparent {
-  background: none;
-  border-color: transparent;
-}
-.bar.bar-transparent .title {
-  color: #fff;
-}
-.bar.bar-transparent .button {
-  color: #fff;
+  background: none !important;
+  border-color: transparent !important;
 }
 .menu {
   background: #232a30;
-}
-.menu .menu a {
-  color: #999999;
 }
 .main-menu .menus .item-content {
   background: #232a30;
@@ -173,8 +173,7 @@
 }
 #hours-wrapper {
   position: relative;
-  margin: 120px 0 0 16px;
-  padding: 0;
+  padding: 100px 0 0 16px;
   z-index: 1;
 }
 #hours-wrapper .introduction div {
@@ -270,9 +269,14 @@
 #countdown li p.timeRefMinutes {
   color: #fff;
 }
+#home .scroll-refresher .ionic-refresher-content .text-pulling {
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
+}
 #home .panel-button {
   position: absolute;
-  top: -2px;
+  top: 98px;
   left: 110px;
   background: none;
   cursor: pointer;

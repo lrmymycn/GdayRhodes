@@ -9,8 +9,7 @@ gdayModule.controller('homeController',
 
     var countDownInterval;
 
-	$('.bar-header').addClass('bar-transparent');
-        $('.bar-header').removeClass('bar-about');
+	$('.menu-content .bar-header').addClass('bar-transparent');
 
     $scope.homeIsLoading = false;
 
