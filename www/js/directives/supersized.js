@@ -1,11 +1,10 @@
 'use strict';
 
-gdayModule.directive('supersized', function(){
+gdayModule.directive('supersized', ['$interval', function($interval){
     return {
-        scope: {
-
-        },
         link: function($scope, $elem, $attrs){
+            console.log('supersized init');
+            console.log($.supersized.vars.slideshow_interval);
             $elem.append('<div id="supersized-loader"></div><ul id="supersized"></ul>');
 
             $.supersized({
@@ -44,6 +43,10 @@ gdayModule.directive('supersized', function(){
                 ]
 
             });
+
+            $scope.$on('$destroy', function() {
+                console.log("supersized destroy");
+            });
         }
     }
-});
+}]);
