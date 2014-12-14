@@ -48,6 +48,9 @@ gdayModule.controller('homeController',
 
                 var arriveTime = nextTrain.arriveTime;
                 if(arriveTime == null){
+                    stopCountdown();
+
+                    //TODO display error message
                     return;
                 }
 
