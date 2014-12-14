@@ -3,14 +3,14 @@
 gdayModule.directive('supersized', ['$interval', function($interval){
     return {
         link: function($scope, $elem, $attrs){
-            console.log('supersized init');
-            console.log($.supersized.vars.slideshow_interval);
             $elem.append('<div id="supersized-loader"></div><ul id="supersized"></ul>');
+
+            var supersizedInterval;
 
             $.supersized({
                 // Functionality
                 slideshow               :   1,			// Slideshow on/off
-                autoplay				:	1,			// Slideshow starts playing automatically
+                autoplay				:	0,			// Slideshow starts playing automatically
                 start_slide             :   0,			// Start slide (0 is random)
                 stop_loop				:	0,			// Pauses slideshow on last slide
                 random					: 	1,			// Randomize slide order (Ignores start slide)
@@ -44,7 +44,17 @@ gdayModule.directive('supersized', ['$interval', function($interval){
 
             });
 
+            supersizedInterval = $interval(function(){
+                api.nextSlide();
+            }, 3000);
+
+
             $scope.$on('$destroy', function() {
+                if (angular.isDefined(supersizedInterval)) {
+                    $interval.cancel(supersizedInterval);
+                    supersizedInterval = undefined;
+                }
+
                 console.log("supersized destroy");
             });
         }
