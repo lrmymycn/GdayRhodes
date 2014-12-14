@@ -28,6 +28,10 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
     <icon height="60" src="res/icon/ios/icon-60.png" width="60" />
     <icon height="120" src="res/icon/ios/icon-60@2x.png" width="120" />
@@ -55,7 +59,7 @@
     <name>GDayRhodes</name>
     <description>
         An Ionic Framework and Cordova project.
-    </description>
+  </description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">
       Ionic Framework Team
     </author>
@@ -65,4 +69,8 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
 </widget>
