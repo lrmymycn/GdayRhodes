@@ -4,7 +4,7 @@ gdayModule.controller('feedbackController',
     ['$scope', '$rootScope', '$ionicPopup', 'feedbackResource',
         function($scope, $rootScope, $ionicPopup, feedbackResource) {
 
-        var MAX_MESSAGE_LENGTH = 20;
+        var MAX_MESSAGE_LENGTH = 500;
 
         $('.bar-header').removeClass('bar-transparent');
 
@@ -60,8 +60,8 @@ gdayModule.controller('feedbackController',
 
             if(message.length > MAX_MESSAGE_LENGTH){
                 $ionicPopup.alert({
-                    title: 'Notes',
-                    template: 'The max length of the message is ' + MAX_MESSAGE_LENGTH
+                    title: 'Err...',
+                    template: 'Maximum length is ' + MAX_MESSAGE_LENGTH + ' characters.'
                 });
                 return false;
             }else{
