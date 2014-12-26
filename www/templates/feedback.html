@@ -17,7 +17,7 @@
 
       <div class="list">
         <label class="item item-input">
-          <textarea rows="6" placeholder="Message" ng-model="feedback.message"></textarea>
+          <textarea rows="6" placeholder="Message" ng-model="feedback.message" ng-keyup="onMessageKeyUp($event)" ng-change="onMessageChange($event)"></textarea>
         </label>
         <label class="item item-input">
           <input type="email" placeholder="Email (Optional)" ng-model="feedback.email">

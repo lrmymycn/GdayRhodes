@@ -38,30 +38,31 @@
                     <div id="intro-title">RHODES<span class="to">TO</span><span>{{train.destination}}</span></div>
                     <!-- title end -->
 
-                    <div id="intro-author">WILL DEPART IN</div>
+                    <div ng-hide="train.arriveTime == null">
+                        <div id="intro-author">WILL DEPART IN</div>
 
-                    <!-- countdown -->
-                    <div id="countdown-wrapper">
-                        <div id="countdown-wrap">
-                            <ul id="countdown">
-                                <li><span class="hours">{{train.hoursToGo}}</span>
-                                    <p class="timeRefHours">hours</p>
-                                </li>
-                                <li><span class="minutes">{{train.minutesToGo}}</span>
-                                    <p class="timeRefMinutes">mins</p>
-                                </li>
-                                <li><span>at</span></li>
-                                <li><span>{{train.arriveHour}}</span><span class="colon">:</span><span>{{train.arriveMinute}}</span>
-                                </li>
-                                <li><span class="ampm">{{train.arriveAmPm}}</span>
-                                </li>
-                            </ul>
+                        <!-- countdown -->
+                        <div id="countdown-wrapper">
+                            <div id="countdown-wrap">
+                                <ul id="countdown">
+                                    <li><span class="hours">{{train.hoursToGo}}</span>
+                                        <p class="timeRefHours">hours</p>
+                                    </li>
+                                    <li><span class="minutes">{{train.minutesToGo}}</span>
+                                        <p class="timeRefMinutes">mins</p>
+                                    </li>
+                                    <li><span>at</span></li>
+                                    <li><span>{{train.arriveHour}}</span><span class="colon">:</span><span>{{train.arriveMinute}}</span>
+                                    </li>
+                                    <li><span class="ampm">{{train.arriveAmPm}}</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+                        <!-- countdown end -->
                     </div>
-                    <!-- countdown end -->
 
-                    <div><span class="intro-intro">{{train.delay}}</span></div>
-
+                    <div><span class="intro-intro">{{train.message}}</span></div>
                 </div>
             </div>
             <!-- intro end -->
