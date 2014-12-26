@@ -46,29 +46,20 @@ gdayModule.controller('homeController',
                 var nextTrain = response.result.nextTrain;
                 $scope.train.destination = nextTrain.destination;
 
-                var arriveTime = nextTrain.arriveTime;
-                if(arriveTime == null){
-                    return;
+                $scope.train.arriveTime = nextTrain.arriveTime;
+                if($scope.train.arriveTime == null){
+                    stopCountdown();
+                }else{
+                    var arriveAt = moment(arriveTime, "HH:mm:ss");
+
+                    $scope.train.arriveHour = arriveAt.format('hh');
+                    $scope.train.arriveMinute = arriveAt.format('mm');
+                    $scope.train.arriveAmPm = arriveAt.format('A');
+
+                    calculateTimeToGo(arriveAt);
+                    startCountdown(arriveAt);
                 }
-
-                var arriveAt = moment(arriveTime, "HH:mm:ss");
-
-                $scope.train.arriveHour = arriveAt.format('hh');
-                $scope.train.arriveMinute = arriveAt.format('mm');
-                $scope.train.arriveAmPm = arriveAt.format('A');
-
-                if(nextTrain.delay > 0) {
-                    var delayCopy = 'Min Delay';
-                    if(nextTrain.delay > 1){
-                        delayCopy = 'Mins Delay';
-                    }
-                    $scope.train.delay = nextTrain.delay + delayCopy;
-                } else {
-                    $scope.train.delay = "Running On Time"
-                }
-
-                calculateTimeToGo(arriveAt);
-                startCountdown(arriveAt);
+                $scope.train.message = nextTrain.message;
             }
 
             $scope.homeIsLoading = false;
