@@ -50,7 +50,7 @@ gdayModule.controller('homeController',
                 if($scope.train.arriveTime == null){
                     stopCountdown();
                 }else{
-                    var arriveAt = moment(arriveTime, "HH:mm:ss");
+                    var arriveAt = moment($scope.train.arriveTime, "HH:mm:ss");
 
                     $scope.train.arriveHour = arriveAt.format('hh');
                     $scope.train.arriveMinute = arriveAt.format('mm');
