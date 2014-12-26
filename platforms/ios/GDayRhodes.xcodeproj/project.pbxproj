@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		0461449077CC4183841C10AD /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 54300CC15438424B904D921B /* IonicKeyboard.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -101,9 +102,11 @@
 		7E7966DB1810823500FA85AD /* icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76@2x.png"; sourceTree = "<group>"; };
 		7E7966DC1810823500FA85AD /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
 		7E7966DD1810823500FA85AD /* icon-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small@2x.png"; sourceTree = "<group>"; };
+		87CEAE2F8CEB4F2CA2EB8641 /* CDVSplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = org.apache.cordova.splashscreen/CDVSplashScreen.m; sourceTree = "<group>"; };
 		8958B32F07FF43FFBF5BDA5C /* CDVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = org.apache.cordova.device/CDVDevice.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* GDayRhodes-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GDayRhodes-Info.plist"; path = "../GDayRhodes-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		938946DD2F6A48A0B45A9145 /* CDVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = org.apache.cordova.console/CDVLogger.h; sourceTree = "<group>"; };
+		97FED67CCD8740FB8FFA7C5B /* CDVSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = org.apache.cordova.splashscreen/CDVSplashScreen.h; sourceTree = "<group>"; };
 		A9D11FD6E67D44ECB9AF9FDE /* CDVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = org.apache.cordova.device/CDVDevice.m; sourceTree = "<group>"; };
 		D0D4DD7CF035473D87AF1CA7 /* UIWebViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIWebViewExtension.m; path = com.ionic.keyboard/UIWebViewExtension.m; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
@@ -113,8 +116,6 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F1EC60FA7BA0410C8274BECC /* UIWebViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIWebViewExtension.h; path = com.ionic.keyboard/UIWebViewExtension.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = GDayRhodes/config.xml; sourceTree = "<group>"; };
-		87CEAE2F8CEB4F2CA2EB8641 /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		97FED67CCD8740FB8FFA7C5B /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
