@@ -28,7 +28,7 @@ var gdayModule = angular.module('gday', ['ionic','LocalStorageModule'])
 })
 
 .constant('appSettings', {
-  apiRoot: 'http://home123.com.au/'
+  apiRoot: 'http://api.home123.com.au/'
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
